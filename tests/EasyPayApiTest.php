@@ -2,16 +2,26 @@
 
 namespace Komen205\EasypayApi\Tests;
 
-use Komen205\EasypayApi\CreateSinglePayment;
+use Komen205\EasypayApi\Payment\CreateSinglePayment;
+use Komen205\EasypayApi\Payment\CustomerInfo;
 
 class EasyPayApiTest extends ConfigTest
 {
     /** @test */
     public function it_creates_frequent_payment()
     {
+        $customer = new CustomerInfo();
+        $customer->setEmail('customer@example.com');
+        $customer->setName('CustomerInfo Example');
+        $customer->setPhone('911234567');
+        $customer->setPhoneIndicative('+351');
+        $customer->setFiscalNumber('PT123456789');
+        $customer->setKey('Key Example');
+        $customer->setLanguage('PT');
+
         $singlePayment = new CreateSinglePayment();
         $singlePayment->setCurrency('EUR');
-        $singlePayment->setCostumer('22ea3cc9-424b-489a-91b7-8955f643dc93', 'Customer Example', 'customer@example.com', '911234567', '+351', 'PT123456789', 'Key Example', 'PT');
+        $singlePayment->setCustomer($customer);
         $singlePayment->setMethod('mb');
         $singlePayment->setType('sale');
         $singlePayment->setValue(0.5);
