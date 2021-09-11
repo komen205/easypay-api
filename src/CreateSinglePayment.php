@@ -2,13 +2,11 @@
 
 namespace Komen205\EasypayApi;
 
-
 class CreateSinglePayment
 {
     public EasyPayAPI $api;
     private string $endpoint = '/single';
     private array $json = [];
-
 
     public function getJson(): array
     {
@@ -28,14 +26,14 @@ class CreateSinglePayment
     public function setCostumer(string $id, string $name, string $email, string $phone, string $phone_indicative, string $fiscal_number, string $key, string $language): void
     {
         $this->json['costumer'] = [
-            'id' => $id,
-            'name' => $name,
-            'email' => $email,
-            'phone' => $phone,
+            'id'               => $id,
+            'name'             => $name,
+            'email'            => $email,
+            'phone'            => $phone,
             'phone_indicative' => $phone_indicative,
-            'fiscal_number' => $fiscal_number,
-            'key' => $key,
-            'language' => $language
+            'fiscal_number'    => $fiscal_number,
+            'key'              => $key,
+            'language'         => $language,
         ];
     }
 
@@ -57,13 +55,12 @@ class CreateSinglePayment
         $this->json['method'] = $method;
     }
 
-
     public function setCapture($transaction_key, $capture_date, $descriptive)
     {
         $this->json['capture'] = [
             'transaction_key' => $transaction_key,
-            'capture_date' => $capture_date,
-            'descriptive' => $descriptive
+            'capture_date'    => $capture_date,
+            'descriptive'     => $descriptive,
         ];
     }
 }

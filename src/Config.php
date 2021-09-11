@@ -2,8 +2,6 @@
 
 namespace Komen205\EasypayApi;
 
-
-
 class Config
 {
     public string $accountId;
@@ -12,6 +10,6 @@ class Config
     public function __construct(string $accountId, string $apiKey)
     {
         $this->accountId = $accountId;
-        $this->apiKey = $apiKey;   
+        $this->apiKey = $apiKey;
     }
 }
