@@ -51,11 +51,13 @@ class CustomerInfo
 
     /**
      * @param string $id
+     *
      * @return CustomerInfo
      */
     public function setId(string $id): CustomerInfo
     {
         $this->id = $id;
+
         return $this;
     }
 
@@ -69,11 +71,13 @@ class CustomerInfo
 
     /**
      * @param string $name
+     *
      * @return CustomerInfo
      */
     public function setName(string $name): CustomerInfo
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -87,11 +91,13 @@ class CustomerInfo
 
     /**
      * @param string $email
+     *
      * @return CustomerInfo
      */
     public function setEmail(string $email): CustomerInfo
     {
         $this->email = $email;
+
         return $this;
     }
 
@@ -105,11 +111,13 @@ class CustomerInfo
 
     /**
      * @param string $phone
+     *
      * @return CustomerInfo
      */
     public function setPhone(string $phone): CustomerInfo
     {
         $this->phone = $phone;
+
         return $this;
     }
 
@@ -123,11 +131,13 @@ class CustomerInfo
 
     /**
      * @param string $phone_indicative
+     *
      * @return CustomerInfo
      */
     public function setPhoneIndicative(string $phone_indicative): CustomerInfo
     {
         $this->phone_indicative = $phone_indicative;
+
         return $this;
     }
 
@@ -141,11 +151,13 @@ class CustomerInfo
 
     /**
      * @param string $fiscal_number
+     *
      * @return CustomerInfo
      */
     public function setFiscalNumber(string $fiscal_number): CustomerInfo
     {
         $this->fiscal_number = $fiscal_number;
+
         return $this;
     }
 
@@ -159,11 +171,13 @@ class CustomerInfo
 
     /**
      * @param string $key
+     *
      * @return CustomerInfo
      */
     public function setKey(string $key): CustomerInfo
     {
         $this->key = $key;
+
         return $this;
     }
 
@@ -177,13 +191,13 @@ class CustomerInfo
 
     /**
      * @param string $language
+     *
      * @return CustomerInfo
      */
     public function setLanguage(string $language): CustomerInfo
     {
         $this->language = $language;
+
         return $this;
     }
-
-
 }

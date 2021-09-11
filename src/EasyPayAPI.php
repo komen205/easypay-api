@@ -40,8 +40,9 @@ class EasyPayAPI
     }
 
     /**
-     * @return ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return ResponseInterface
      */
     public function request(): ResponseInterface
     {
@@ -52,7 +53,7 @@ class EasyPayAPI
         try {
             $response = $this->client->post($this->endpoint, ['headers' => [
                 'AccountId' => $this->config->accountId,
-                'ApiKey' => $this->config->apiKey,
+                'ApiKey'    => $this->config->apiKey,
             ], 'json' => $this->json]);
         } catch (ClientException $e) {
             throw new \Exception(Psr7\Message::toString($e->getResponse()));
@@ -63,21 +64,25 @@ class EasyPayAPI
 
     /**
      * @param string $endpoint
+     *
      * @return EasyPayAPI
      */
     public function setEndpoint(string $endpoint): EasyPayAPI
     {
-        $this->endpoint = $this->endpoint . $endpoint;
+        $this->endpoint = $this->endpoint.$endpoint;
+
         return $this;
     }
 
     /**
      * @param array $json
+     *
      * @return EasyPayAPI
      */
     public function setJson(array $json): EasyPayAPI
     {
         $this->json = $json;
+
         return $this;
     }
 }
