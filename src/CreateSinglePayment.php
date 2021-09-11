@@ -2,7 +2,8 @@
 
 namespace Komen205\EasypayApi;
 
-class SinglePayment
+
+class CreateSinglePayment
 {
     public EasyPayAPI $api;
     private string $endpoint = '/single';
@@ -38,8 +39,11 @@ class SinglePayment
         ];
     }
 
-    public function setValue(float|int $value)
+    public function setValue(float $value)
     {
+        if ($value < 0.5) {
+            throw new \Exception('Value must be higher than 0.5');
+        }
         $this->json['value'] = $value;
     }
 
